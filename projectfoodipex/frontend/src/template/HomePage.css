@@ -1,0 +1,202 @@
+/* HomePage.css */
+
+/* Container for the whole page */
+.home-page-container {
+    display: flex;
+    min-height: 100vh;
+
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Adjust based on your sidebar width */
+    background-color: #f8f9fa; /* Adjust as needed */
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar-visible {
+    transform: translateX(0); /* Sidebar visible */
+}
+
+.sidebar-hidden {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 1.5em;
+}
+
+.sidebar-menu {
+    margin-top: 20px;
+}
+
+.menu-visible {
+    display: block;
+}
+
+.menu-hidden {
+    display: none;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between links */
+}
+
+.sidebar-menu a:hover {
+    background-color: #ddd;
+}
+
+.sidebar-menu svg {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Home page container styling */
+.home-page-container {
+    display: flex;
+    height: 100vh;
+}
+/* Navbar styling */
+.navbar2 {
+    position: fixed;
+    top: 0;
+    left: 0; /* Align with the sidebar */
+    width: 100%; /* Full width of the viewport */
+    background: black;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the end of the navbar */
+    align-items: center; /* Center vertically */
+    z-index: 1000;
+}
+.navbar-left {
+    display: flex;
+    align-items: center;
+    padding-right:1100px;
+    padding-left:5px;
+}
+
+.logo {
+    height: 40px; /* Adjust the logo size as needed */
+    margin-right: 10px;
+     padding-left:5px
+
+}
+
+.navbar-title {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: white; /* Ensure the text color contrasts with the background */
+}
+
+/* Profile menu container */
+.profile-menu-container {
+    display: flex;
+    align-items: center; /* Align profile button and user info vertically */
+    position: relative;
+}
+/* Profile button styling */
+.profile-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ecf0f1;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+/* Profile button hover effect */
+.profile-button:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+/* User info styling */
+.user-info {
+    font-size: 14px;
+    color: #ecf0f1; /* Light color for user info */
+    margin-right: 20px; /* Spacing between user info and profile button */
+}
+
+.email {
+    margin-left: 5px;
+    color: white; /* Adjust color if needed */
+}
+
+/* Profile dropdown menu styling */
+.profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 150px;
+    z-index: 1000;
+}
+
+/* Logout button inside dropdown */
+.profile-menu button {
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-menu button:hover {
+    background-color: #f1f1f1;
+    color: #3498db;
+}
+.content-wrapper {
+    flex: 1;
+    margin-top: 56px; /* Margin to avoid overlap with fixed navbar */
+    padding: 20px; /* Padding around the content */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.carousel-container {
+    width: calc(100% - 250px); /* Full width minus sidebar width */
+    margin-left: 250px; /* Ensure proper spacing from sidebar */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.carousel-container img {
+    width: 100%; /* Make images take up the full width */
+    height: auto; /* Maintain aspect ratio */
+}

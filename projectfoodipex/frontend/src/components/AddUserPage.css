@@ -1,0 +1,109 @@
+/* Container Styling */
+.add-user-page {
+    width: 100%; /* Utilisation de 90% de la largeur de la page */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Form Elements */
+.add-user-page form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.add-user-page form .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.add-user-page form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Buttons */
+.add-user-page .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-user-page .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.add-user-page .btn-primary .me-2 {
+    margin-right: 10px;
+}
+
+/* Row Spacing */
+.add-user-page .row {
+    margin-bottom: 20px;
+}
+
+/* Alerts */
+.add-user-page .alert {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+/* TreeSelect Styles */
+.add-user-page .ant-select {
+    border-radius: 5px !important;
+}
+
+.add-user-page .ant-select-selector {
+    padding: 8px !important;
+    font-size: 16px;
+}
+
+.add-user-page .ant-select-selection-placeholder {
+    color: #6c757d;
+}
+
+/* Checkbox Styling */
+.add-user-page .form-check {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-user-page .form-check-input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Header */
+.add-user-page h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Custom Alert Success/Error Styling */
+.add-user-page .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.add-user-page .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

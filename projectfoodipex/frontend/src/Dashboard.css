@@ -1,0 +1,311 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden; /* Disable vertical scroll */
+}
+.navbar {
+  height: 70px; /* Example height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem; /* Space below the navbar */
+  background-color: #626262; /* Navbar background color */
+   transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+}
+
+.navbar a {
+  color: white; /* Default link color */
+  font-size: 16px; /* Light font size */
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff; /* Hover color */
+}
+
+.navbar a.active {
+  color: #00FFFF !important; /* Cyan color for the active link */
+  font-weight: bold;
+  text-decoration: underline;
+  border-radius: 5px;
+}
+.sidebar {
+  width: 300px; /* Adjust as needed */
+  background-color: #f8f9fa;
+  position: fixed;
+  left: 0;
+  top: 10px;
+  overflow-y: auto; /* Add scrolling if content overflows */
+  z-index: 1000;
+
+  height: calc(100% - 10px); /* Ensure full height minus any top spacing */
+   border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+}
+
+
+.sidebar.collapsed {
+  width: 0px; /* Width when collapsed */
+   margin-right:0px;
+     display: none;
+
+}
+
+.sidebar.expanded {
+  width: 300px; /* Width when expanded */
+   margin-top:0px;
+
+}
+
+.main-content {
+  margin-left: 250px; /* Default margin for expanded sidebar */
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+
+}
+
+.main-content.expanded {
+  margin-left: 300px; /* Adjust based on expanded sidebar width */
+}
+
+.main-content.collapsed {
+  margin-left: 0;
+
+}
+.sidebar ul {
+  list-style-type: none;
+ padding: 10px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+
+  transition: background-color 0.3s ease;
+
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #dcdcdc;
+}
+
+/* Profile Menu Container */
+.profile-menu-container {
+  position: relative; /* To allow absolute positioning of the profile menu */
+  display: flex;
+  align-items: center; /* Vertically aligns icon and user info */
+}
+
+.profile-button {
+  font-size: 32px; /* Adjust size of FaUserCircle icon */
+  background: none;
+  border: none;
+  cursor: pointer;
+   margin-right: 10px; /* Adjusts space between icon and user info */
+}
+
+
+
+.profile-menu {
+  position: absolute;
+  top: 70px; /* Adjusts the menu to appear directly beneath the profile icon */
+  left: 0; /* Aligns the menu directly below the icon */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Ensures menu buttons stack vertically */
+  min-width: 150px; /* Ensures consistent width */
+}
+
+.profile-menu button {
+  background: none;
+  border: none;
+ padding: 12px 16px; /* Increased padding for better touch target */
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+   gap: 12px; /* Adds space between icon and text */
+  width: 100%;
+}
+
+.profile-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.logout-button i {
+  font-size: 18px; /* Increase or decrease the size */
+}
+
+/* User info styling */
+.user-info {
+
+   background-color: transparent !important; /* Ensure no background color */
+   color: white !important; /* Ensure text color is white for visibility */
+   display: flex;
+
+   flex-direction: column; /* Align username and email horizontally */
+   align-items: flex-start; /* Aligns text to the start */
+
+   margin-left: 10px; /* Ajoute de l'espace à gauche de user-info */
+   margin-right: 20px; /* Adjust this value to change space between user info and profile button */
+   border: none !important; /* Ensure no border */
+   text-decoration: none !important; /* Ensure no underline */
+
+}
+
+
+.username {
+   font-size: 14px;
+   color: white;
+   font-weight: bold;
+   margin: 0; /* Removes default margin */
+
+}
+
+.email {
+   font-size: 12px; /* Adjust as needed */
+   color: white;
+   margin: 0; /* Removes default margin */
+}
+/* Update the styles for the toggle button */
+.toggle-btn {
+  background-color:  #626262; /* Match the navbar color */
+  color: white;              /* Icon color */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 20px;
+
+}
+
+.toggle-btn:hover {
+  background-color: #626262; /* Slightly darker shade on hover */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+}
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Reduce width on smaller screens */
+  }
+
+  .sidebar.collapsed {
+    width: 0; /* Hide sidebar when collapsed */
+  }
+
+  .sidebar.expanded {
+    width: 200px; /* Adjust expanded width */
+  }
+}
+/* Responsive Main Content */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px; /* Adjust for sidebar width */
+  }
+
+  .main-content.collapsed {
+    margin-left: 0; /* Remove margin when sidebar is collapsed */
+  }
+}
+
+hr:not([size]) {
+    height: 1px;
+}
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: black;
+    border: 0;
+    opacity: .25;
+}
+
+i.fas.fa-tachometer-alt {
+    margin-right: 32px;
+}
+i.fas.fa-table {
+    margin-right: 32px;
+}
+i.fas.fa-chart-pie {
+    margin-right: 32px;
+}
+i.fas.fa-cogs {
+    margin-right: 32px;
+}
+/* Adjust the layout when the sidebar is expanded */
+.sidebar.expanded + .navbar .profile-menu-container {
+  margin-left: 300px; /* Adjust the margin-left of the profile info */
+}
+
+/* Responsive behavior for small screens */
+@media (max-width: 768px) {
+  .user-info {
+    font-size: 12px;
+    display: flex; /* Ensure user info is still visible */
+  }
+  .profile-button {
+    font-size: 20px;
+  }
+}
+
+
+.kpi-container {
+  flex-grow: 1; /* Allow the container to grow and take available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+}
+/* Style pour la page active */
+.active-link {
+  background-color: #e3e3e3; /* Appliquez la couleur de fond sur toute la zone */
+  padding: 12px 20px; /* Ajoutez du padding pour agrandir la zone active */
+}
+
+/* Applique l'effet hover à tout l'élément li, incluant le hr */
+.nav li:hover, .active-link {
+  background-color: #e3e3e3; /* Applique l'effet hover et active à l'élément li entier */
+  transition: background-color 0.3s ease; /* Transition douce */
+  padding: 12px 20px; /* Ajoutez du padding pour agrandir la zone de hover */
+}
+
+/* Style pour le hr entre les éléments */
+.sidebar-separator {
+  margin: 2px 0; /* Réduisez l'espace vertical entre le lien et le séparateur */
+  border: 0;
+  border-top: 1px solid #ccc; /* Bordure du hr */
+  width: 100%; /* Prend toute la largeur disponible */
+}
+/* Sidebar Title Styling */
+.sidebar-title {
+  font-size: 34px; /* Taille du texte du titre */
+  font-weight: bold;  /* Texte en gras */
+  padding: 15px; /* Espacement autour du titre */
+  text-align: center; /* Centrer le texte */
+  color: gray; /* Couleur du texte (ajustez selon le thème de la sidebar) */
+  margin-left: 10px;
+
+}

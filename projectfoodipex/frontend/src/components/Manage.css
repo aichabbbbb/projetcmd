@@ -1,0 +1,456 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto; /* Disable vertical scroll */
+}
+.navbar {
+  height: 70px; /* Example height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem; /* Space below the navbar */
+  background-color: #626262; /* Navbar background color */
+   transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+}
+
+.navbar a {
+  color: white; /* Default link color */
+  font-size: 16px; /* Light font size */
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff; /* Hover color */
+}
+
+.navbar a.active {
+  color: #00FFFF !important; /* Cyan color for the active link */
+  font-weight: bold;
+  text-decoration: underline;
+  border-radius: 5px;
+}
+.sidebar {
+  width: 300px; /* Adjust as needed */
+  background-color: #f8f9fa;
+  position: fixed;
+  left: 0;
+  top: 10px;
+  overflow-y: auto; /* Add scrolling if content overflows */
+  z-index: 1000;
+
+  height: calc(100% - 10px); /* Ensure full height minus any top spacing */
+   border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+}
+
+
+.sidebar.collapsed {
+  width: 0px; /* Width when collapsed */
+   margin-right:0px;
+     display: none;
+
+}
+
+.sidebar.expanded {
+  width: 300px; /* Width when expanded */
+   margin-top:0px;
+
+}
+
+.main-content {
+  margin-left: 250px; /* Default margin for expanded sidebar */
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  overflow-y: auto; /* enable vertical scroll */
+
+
+}
+
+.main-content.expanded {
+  margin-left: 300px; /* Adjust based on expanded sidebar width */
+  overflow-y: auto; /* Disable vertical scroll */
+}
+
+.main-content.collapsed {
+  margin-left: 0;
+  overflow-y: auto; /* Disable vertical scroll */
+
+}
+
+.table1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px; /* Space above the table */
+  overflow-y: auto; /* Disable vertical scroll */
+}
+.table1 thead {
+
+  top: 0;
+  z-index: 2; /* Ensure it stays above other content while scrolling */
+}
+
+.table1 th, .table1 td {
+  padding: 8px;
+  text-align: center;
+}
+
+.table1 td {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.table1 td:hover {
+  background-color: #e0e0e0;
+}
+
+.table1 th {
+  background-color: #d3d3d3;
+  color: #333;
+  font-weight: bold;
+  padding: 12px 15px;
+  border-top: 2px solid white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table1 th:hover {
+  background-color: #b0b0b0;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding-left: 30px;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #6c757d;
+}
+
+
+
+/* Status styles */
+
+
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 10px;
+  MARGIN-TOP: 20PX;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+
+  transition: background-color 0.3s ease;
+
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #dcdcdc;
+}
+
+/* Profile Menu Container */
+.profile-menu-container {
+  position: relative; /* To allow absolute positioning of the profile menu */
+  display: flex;
+  align-items: center; /* Vertically aligns icon and user info */
+}
+
+.profile-button {
+  font-size: 32px; /* Adjust size of FaUserCircle icon */
+  background: none;
+  border: none;
+  cursor: pointer;
+   margin-right: 10px; /* Adjusts space between icon and user info */
+}
+
+
+
+.profile-menu {
+  position: absolute;
+  top: 70px; /* Adjusts the menu to appear directly beneath the profile icon */
+  left: 0; /* Aligns the menu directly below the icon */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Ensures menu buttons stack vertically */
+  min-width: 150px; /* Ensures consistent width */
+}
+
+.profile-menu button {
+  background: none;
+  border: none;
+ padding: 12px 16px; /* Increased padding for better touch target */
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+   gap: 12px; /* Adds space between icon and text */
+  width: 100%;
+}
+
+.profile-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* User info styling */
+.user-info {
+
+   background-color: transparent !important; /* Ensure no background color */
+   color: white !important; /* Ensure text color is white for visibility */
+   display: flex;
+
+   flex-direction: column; /* Align username and email horizontally */
+   align-items: flex-start; /* Aligns text to the start */
+
+   margin-left: 10px; /* Ajoute de l'espace à gauche de user-info */
+   margin-right: 20px; /* Adjust this value to change space between user info and profile button */
+   border: none !important; /* Ensure no border */
+   text-decoration: none !important; /* Ensure no underline */
+
+}
+
+
+.username {
+   font-size: 14px;
+   color: white;
+   font-weight: bold;
+   margin: 0; /* Removes default margin */
+
+}
+
+.email {
+   font-size: 12px; /* Adjust as needed */
+   color: white;
+   margin: 0; /* Removes default margin */
+}
+/* Update the styles for the toggle button */
+.toggle-btn {
+  background-color:  #626262; /* Match the navbar color */
+  color: white;              /* Icon color */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 20px;
+
+}
+
+.toggle-btn:hover {
+  background-color: #626262; /* Slightly darker shade on hover */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+}
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Reduce width on smaller screens */
+  }
+
+  .sidebar.collapsed {
+    width: 0; /* Hide sidebar when collapsed */
+  }
+
+  .sidebar.expanded {
+    width: 200px; /* Adjust expanded width */
+  }
+}
+/* Responsive Main Content */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px; /* Adjust for sidebar width */
+  }
+
+  .main-content.collapsed {
+    margin-left: 0; /* Remove margin when sidebar is collapsed */
+  }
+}
+
+
+.black-button {
+
+  color: black !important; /* Set text/icon color to white for contrast */
+  border: 1px solid black; /* Optional: Keep the border black */
+}
+
+.black-button:hover {
+  background-color: darkgray; /* Change color on hover */
+}
+hr:not([size]) {
+    height: 1px;
+}
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: black;
+    border: 0;
+    opacity: .25;
+}
+
+i.fas.fa-tachometer-alt {
+    margin-right: 32px;
+}
+i.fas.fa-table {
+    margin-right: 32px;
+}
+i.fas.fa-chart-pie {
+    margin-right: 32px;
+}
+i.fas.fa-cogs {
+    margin-right: 32px;
+}
+/* Adjust the layout when the sidebar is expanded */
+.sidebar.expanded + .navbar .profile-menu-container {
+  margin-left: 300px; /* Adjust the margin-left of the profile info */
+}
+
+/* Responsive behavior for small screens */
+@media (max-width: 768px) {
+  .user-info {
+    font-size: 12px;
+    display: flex; /* Ensure user info is still visible */
+  }
+  .profile-button {
+    font-size: 20px;
+  }
+}
+.close-sidebar-btn {
+  background: gray; /* Remove background */
+  border: none; /* Remove border */
+  color: white; /* Change color to match your design */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 24px; /* Adjust size if needed */
+  padding: 5px; /* Add padding if needed for better click area */
+  margin-left: 224px;
+}
+
+.sidebar .nav-link {
+  color: black; /* White text color for links */
+  padding: 15px; /* Add padding for clickable area */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.sidebar .nav-link:hover {
+  background-color: #495057; /* Change background on hover */
+}
+/* Manage.css */
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed; /* Keep sidebar fixed */
+    left: 0;
+    top: 0;
+    width: 250px; /* Adjust sidebar width */
+    height: 100%;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    transition: transform 0.3s ease; /* Transition for toggling */
+    transform: translateX(-100%); /* Start hidden */
+  }
+
+  .sidebar.expanded {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove left margin */
+    width: 100%; /* Full width */
+  }
+
+  .toggle-btn {
+    z-index: 10; /* Ensure button is on top */
+  }
+
+  .navbar {
+    height: 55px; /* Keep navbar height */
+  }
+
+  .search-container {
+    width: 100%; /* Full width search */
+  }
+
+  .search-input {
+    width: calc(100% - 40px); /* Full width minus icon space */
+  }
+
+  /* Make table responsive */
+  .table1 {
+    display: block;
+    overflow-x: auto; /* Allow horizontal scroll */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+  .user-info {
+    display: none; /* Hide user info on mobile */
+  }
+}
+
+/* Adjust button sizes */
+button {
+  font-size: 14px; /* Smaller button text */
+  padding: 8px 12px; /* Smaller padding */
+}
+
+/* Add padding to the content area */
+.main-content {
+  padding: 10px; /* Add padding */
+}
+
+/* Center text in table */
+.table1 td {
+  text-align: center; /* Center-align table text */
+}
+.sidebar-separator {
+  margin: 2px 0; /* Ajustez l'espacement vertical entre hr et les titres */
+  border: 0; /* Supprimez la bordure par défaut */
+  border-top: 1px solid black; /* Ajoutez une bordure supérieure */
+}
+
+.button-enabled {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.button-disabled {
+  background-color: blue ; /* Light gray */
+  color: #7d7d7d;            /* Dark gray */
+  border: 1px solid black;   /* Keep border for consistency */
+  cursor: not-allowed;
+  opacity: 0.7;              /* Optional: adjust opacity when disabled */
+}

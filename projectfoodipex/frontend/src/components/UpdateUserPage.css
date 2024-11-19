@@ -1,0 +1,75 @@
+/* UpdateUserModal.css */
+
+/* Styles généraux pour le modal */
+.modal-header {
+    background-color: #007bff; /* Couleur de fond de l'en-tête du modal */
+    color: white; /* Couleur du texte de l'en-tête */
+}
+
+.modal-title {
+    display: flex;
+    align-items: center; /* Aligne le texte et l'icône verticalement */
+}
+
+.modal-body {
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+/* Styles pour les alertes */
+.popup-alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.popup-alert.success {
+    background-color: #d4edda; /* Vert clair */
+    color: #155724; /* Vert foncé */
+    border: 1px solid #c3e6cb; /* Bordure verte */
+}
+
+.popup-alert.error {
+    background-color: #f8d7da; /* Rouge clair */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb; /* Bordure rouge */
+}
+
+/* Styles pour le bouton de fermeture de l'alerte */
+.popup-alert .close-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem; /* Taille de la police */
+    cursor: pointer; /* Curseur pointer sur hover */
+}
+
+/* Styles pour le formulaire */
+.form-control {
+    margin-bottom: 15px; /* Espacement entre les champs du formulaire */
+}
+
+.form-check {
+    margin-top: 10px; /* Espacement supérieur pour les cases à cocher */
+}
+
+/* Styles pour le bouton */
+button.btn-primary {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    border-color: #007bff; /* Couleur de la bordure du bouton */
+    color: white; /* Couleur du texte du bouton */
+    padding: 10px 20px; /* Espacement intérieur du bouton */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+    border-color: #0056b3; /* Couleur de la bordure du bouton au survol */
+}
+
+/* Styles pour TreeSelect */
+.tree-select {
+    margin-bottom: 15px; /* Espacement pour TreeSelect */
+}
